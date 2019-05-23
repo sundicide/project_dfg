@@ -20,5 +20,8 @@ const team = {
   'AS_MONACO': {
     name: 'AS 모나코',
   },
+  'TOTTENHAM_HOTSPUR': {
+    name: '토트넘',
+  },
 };
 export { team };

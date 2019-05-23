@@ -1,5 +1,11 @@
 import { team } from '@/data/team.js'
 export default {
+  FINAL: {
+    team: [team.LIVERPOOL, team.TOTTENHAM_HOTSPUR],
+    children: {
+
+    },
+  }
   32: [
     {
       "A": [
