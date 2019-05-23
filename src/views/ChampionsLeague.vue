@@ -1,11 +1,36 @@
 <template>
 <div class="champions-league">
+    <el-row >
+        <el-col :span="4">
+            <div style="border: 1px solid black">32강</div>
+            <Table :teams="team18_19" />
+            <!-- <Table />
+            <Table />
+            <Table />
+            <Table />
+            <Table />
+            <Table />
+            <Table /> -->
+        </el-col>
+        <el-col :span="4">16강</el-col>
+        <el-col :span="4">8강</el-col>
+        <el-col :span="4">4강</el-col>
+        <el-col :span="4">결승</el-col>
+    </el-row>
+    <el-button>Button</el-button>
 </div>
 </template>
+
 <script>
-import z2018_2019 from '@/data/2018_2019.js';
+
+import team18_19 from '@/data/2018_2019.js';
 import * as d3 from 'd3'
+import Table from '@/views/table';
+
 export default {
+    components: {
+        Table,
+    },
     data() {
         return {
             testData: {
@@ -16,6 +41,7 @@ export default {
                     }
                 ],
             },
+            team18_19,
         };
     },
     mounted() {
@@ -53,6 +79,7 @@ export default {
                     }
                 ]
             };
+            /*
             console.log(z2018_2019)
             console.log(this.testData)
             const root = d3.hierarchy(test);
@@ -104,6 +131,7 @@ export default {
                 .attr('dy', '0em')
                 .attr('fill', 'black')
                 .text(function(d) { return d.data.name })
+                */
         });
     },
 }
