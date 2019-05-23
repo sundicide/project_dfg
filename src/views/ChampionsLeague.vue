@@ -55,14 +55,30 @@ export default {
             };
             console.log(z2018_2019)
             console.log(this.testData)
-            const root = d3.hierarchy(test);
             console.log(root)
-            const tree = d3.tree().size([200, 200]);
+            // const tree = d3.tree().size([200, 200]);
             const svg = d3.select('.champions-league').append('svg').attr('viewBox', [-20, -20, 800, 800]);
 
-            tree(root);
+            const tree = function(data) {
+                const root = d3.hierarchy(data);
+                root.dx = 10;
+                root.dy = 800 / (root.height + 1);
+                return d3.tree().nodeSize([root.dx, root.dy])(root);
+            }
+            const root = tree(test);
 
-            let node = svg.append("g")
+            let x0 = Infinity;
+            let x1 = -x0;
+            root.each(d => {
+                if (d.x > x1) x1 = d.x;
+                if (d.x < x0) x0 = d.x;
+            });
+
+            const g = svg.append("g")
+                .attr('transform', `translate(${root.dy / 3}, ${root.dx - x0})`);
+            
+
+            let node = g.append("g")
                 .attr("stroke", "#fff")
                 .attr("stroke-width", 2)
                 .selectAll(".node");
@@ -82,8 +98,7 @@ export default {
             node = node.data(root.descendants())
                 .enter()
                 .append('circle')
-                .attr('cx', function(d) {return d.x;})
-                .attr('cy', function(d) {return d.y;})
+                .attr("transform", d => `translate(${d.y},${d.x})`)
                 .attr('r', 4);
 
             link = link.data(root.links())
