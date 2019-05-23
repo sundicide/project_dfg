@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "d3": "^5.9.2",
+    "element-ui": "^2.8.2",
+    "npm": "^6.9.0",
     "vue": "^2.6.6"
   },
   "devDependencies": {
