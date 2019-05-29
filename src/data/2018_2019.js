@@ -5,15 +5,19 @@ export default {
     children: {
 
     },
-  }
-  32: [
-    {
-      "A": [
-        team.LIVERPOOL,
-        team.BORUSSIA_DORTMUND,
-        team.CLUB_BRUGGE,
-        team.AS_MONACO,
-      ]
-    }
-  ],
+  },
+  32: {
+    "A": [
+      { rank: 1, ...team.BORUSSIA_DORTMUND },
+      { rank: 2, ...team.ATLETICO_MADRID },
+      { rank: 3, ...team.CLUB_BRUGGE },
+      { rank: 4, ...team.AS_MONACO },
+    ],
+    "B": [
+      { rank: 1, ...team.FC_BARCELONA },
+      { rank: 2, ...team.TOTTENHAM_HOTSPUR },
+      { rank: 3, ...team.INTER_MILAN },
+      { rank: 4, ...team.PSV_EINDHOVEN },
+    ],
+  },
 }

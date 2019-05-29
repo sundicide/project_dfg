@@ -3,7 +3,8 @@
     <el-row >
         <el-col :span="4">
             <div style="border: 1px solid black">32강</div>
-            <Table :teams="team18_19" />
+            <Table :teams="team18_19['32'].A" />
+            <Table :teams="team18_19['32'].B" />
             <!-- <Table />
             <Table />
             <Table />
@@ -25,7 +26,7 @@
 
 import team18_19 from '@/data/2018_2019.js';
 import * as d3 from 'd3'
-import Table from '@/views/table';
+import Table from '@/views/BracketTable';
 
 export default {
     components: {
