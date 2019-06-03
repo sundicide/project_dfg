@@ -5,6 +5,12 @@
             <div style="border: 1px solid black">32강</div>
             <Table :teams="team18_19['32'].A" />
             <Table :teams="team18_19['32'].B" />
+            <Table :teams="team18_19['32'].C" />
+            <Table :teams="team18_19['32'].D" />
+            <Table :teams="team18_19['32'].E" />
+            <Table :teams="team18_19['32'].F" />
+            <Table :teams="team18_19['32'].G" />
+            <Table :teams="team18_19['32'].H" />
             <!-- <Table />
             <Table />
             <Table />
